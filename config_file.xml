@@ -1,0 +1,62 @@
+<!-- file.xml -->
+<Esxi>
+	<Host>
+		<hostname>ESX01</hostname>
+		<Username>root</Username>
+		<Password>P@ssw0rd</Password>
+		<VMHost>192.168.13.1</VMHost>
+		<vmotionIP>10.1.250.1</vmotionIP>
+		<iscsiIP1>10.0.0.1</iscsiIP1> <!-- Optionnal-->
+		<iscsiIP2>10.0.1.1</iscsiIP2> <!-- Optionnal-->
+	</Host>
+	<Host>
+		<hostname>ESX02</hostname>
+		<Username>root</Username>
+		<Password>P@ssw0rd</Password>
+		<VMHost>192.168.13.2</VMHost>
+		<vmotionIP>10.1.250.2</vmotionIP>
+		<iscsiIP1>10.0.0.2</iscsiIP1> <!-- Optionnal-->
+		<iscsiIP2>10.0.1.2</iscsiIP2> <!-- Optionnal-->
+	</Host>
+	<Parameters>
+		<mgtnic1>vmnic0</mgtnic1>
+		<mgtnic2>vmnic1</mgtnic2>
+		<vmotion_name>VMotion</vmotion_name>
+		<vmotionvlan>11</vmotionvlan>
+		<vmosubnet>255.255.255.0</vmosubnet>
+		<dnspri>192.168.2.202</dnspri>
+		<dnsalt>192.168.2.202</dnsalt>
+		<domainname>test.local</domainname>
+		<ntpone>192.168.2.202</ntpone>
+		<ntptwo>192.168.2.201</ntptwo>
+	</Parameters>
+	<vSwitchName>
+		<Name>vSwicth0</Name>
+		<VMPort>
+			<vlanName>TEST</vlanName>
+			<vlanID>0</vlanID>
+		</VMPort>
+		<nics>vmnic0,vmnic1</nics> <!-- for vswitch0 not used-->
+	</vSwitchName>
+	<vSwitchName>
+		<Name>vSwicth1</Name>
+		<VMPort>
+			<vlanName>TEST3</vlanName>
+			<vlanID>0</vlanID>
+		</VMPort>
+		<VMPort>
+			<vlanName>TEST4</vlanName>
+			<vlanID>0</vlanID>
+		</VMPort>
+		<nics>vmnic4,vmnic5</nics>
+	</vSwitchName>
+	<CustomParameters>
+		<protocol>iSCSI</protocol><!-- NFS or iSCSI -->
+		<Name>vSwich_iSCSI</Name> <!-- Only for iSCSI-->
+		<iscsisubnet>255.255.255.0</iscsisubnet> <!-- Only for iSCSI-->
+		<iscsinic1>vmnic2</iscsinic1> <!-- Only for iSCSI-->
+		<iscsinic2>vmnic3</iscsinic2> <!-- Only for iSCSI-->
+		<iscsi1_name>iSCSI1</iscsi1_name> <!-- Only for iSCSI-->
+		<iscsi2_name>iSCSI2</iscsi2_name> <!-- Only for iSCSI-->
+	</CustomParameters>
+</Esxi>
